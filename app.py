@@ -12,7 +12,12 @@ app = Flask(__name__)
 filename = 'iris/decision_tree_model.sav'
 model = pickle.load(open(filename, 'rb'))
 
-@app.route("/", methods=["POST"])
+@app.route('/')
+def hello_world():
+	return 'Hello World!'
+
+
+@app.route("/model", methods=["POST"])
 def index():
     print("This came here")
     print(request.json)
