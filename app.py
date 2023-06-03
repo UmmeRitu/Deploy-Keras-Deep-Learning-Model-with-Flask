@@ -6,8 +6,8 @@ from flask import Flask, jsonify, request
 from tensorflow import keras
 
 app = Flask(__name__)
-model = keras.models.load_model("assets/price_prediction_model2.h5")
-transformer = joblib.load("assets/data_transformer2.joblib")
+model = keras.models.load_model("assets/price_prediction_model3.h5")
+transformer = joblib.load("assets/data_transformer3.joblib")
 
 
 @app.route("/", methods=["POST"])
