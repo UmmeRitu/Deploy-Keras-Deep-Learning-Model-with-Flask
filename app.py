@@ -9,6 +9,7 @@ import pickle
 app = Flask(__name__)
 # model = keras.models.load_model("assets/price_prediction_model3.h5")
 # transformer = joblib.load("assets/data_transformer3.joblib")
+filename = 'decision_tree_model.sav'
 model = pickle.load(open(filename, 'rb'))
 
 @app.route("/", methods=["POST"])
