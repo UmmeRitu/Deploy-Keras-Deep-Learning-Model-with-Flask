@@ -17,7 +17,14 @@ def index():
     print("This came here")
     print(request.json)
     data = request.json
-    prediction = model.predict([[6.8, 3.2, 5.9, 2.3]])
+
+    number1 = data['data'][0][0]
+    number2 = data['data'][0][1]
+    number3 = data['data'][0][2]
+    number4 = data['data'][0][3]
+
+
+    prediction = model.predict([[number1, number2, number3, number4 ]])
     # df = pd.DataFrame(data, index=[0])
     # prediction = model.predict(transformer.transform(df))
     # predicted_price = expm1(prediction.flatten()[0])
