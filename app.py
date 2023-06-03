@@ -15,7 +15,7 @@ model = pickle.load(open(filename, 'rb'))
 @app.route("/", methods=["POST"])
 def index():
     print("This came here")
-    print(request)
+    print(request.json)
     data = request.json
     prediction = model.predict([[6.8, 3.2, 5.9, 2.3]])
     # df = pd.DataFrame(data, index=[0])
