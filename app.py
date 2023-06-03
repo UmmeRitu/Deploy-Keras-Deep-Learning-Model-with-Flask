@@ -12,8 +12,9 @@ transformer = joblib.load("assets/data_transformer.joblib")
 
 @app.route("/", methods=["POST"])
 def index():
+    print("This came here")
     data = request.json
     df = pd.DataFrame(data, index=[0])
-    prediction = model.predict(transformer.transform(df))
-    predicted_price = expm1(prediction.flatten()[0])
-    return jsonify({"price": str(predicted_price)})
+    # prediction = model.predict(transformer.transform(df))
+    # predicted_price = expm1(prediction.flatten()[0])
+    return jsonify({  "message": "Hello, world!"})
