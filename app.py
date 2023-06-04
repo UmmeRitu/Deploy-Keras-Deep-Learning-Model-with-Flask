@@ -35,21 +35,21 @@ def hello_world():
 	# return 'Hello World!'
 
 
-@app.route("/model", methods=["POST"])
-def index():
-    print("This came here")
-    print(request.json)
-    data = request.json
+# @app.route("/model", methods=["POST"])
+# def index():
+#     print("This came here")
+#     print(request.json)
+#     data = request.json
 
-    number1 = data['data'][0][0]
-    number2 = data['data'][0][1]
-    number3 = data['data'][0][2]
-    number4 = data['data'][0][3]
+#     number1 = data['data'][0][0]
+#     number2 = data['data'][0][1]
+#     number3 = data['data'][0][2]
+#     number4 = data['data'][0][3]
 
 
-    prediction = model.predict([[number1, number2, number3, number4 ]])
-    # df = pd.DataFrame(data, index=[0])
-    # prediction = model.predict(transformer.transform(df))
-    # predicted_price = expm1(prediction.flatten()[0])
-    # # return jsonify({  "message": "Hello, world!"})
-    return jsonify({"Specis": str(prediction[0])})
+#     prediction = model.predict([[number1, number2, number3, number4 ]])
+#     # df = pd.DataFrame(data, index=[0])
+#     # prediction = model.predict(transformer.transform(df))
+#     # predicted_price = expm1(prediction.flatten()[0])
+#     # # return jsonify({  "message": "Hello, world!"})
+#     return jsonify({"Specis": str(prediction[0])})
